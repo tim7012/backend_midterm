@@ -1,8 +1,20 @@
 <p>Title: <%= @post.title%></p>
 <p><%= @post.content%></p>
 
-<p><%#= link_to "New Comment", new_post_comment_path(@post)%>
+<p><%= link_to "New Comment", new_post_comments_path(@post)%>
 
+<br><br>
 
+<table>
+  <p>Comments:</p>
+  <% @post.comments.each do |c|%>
+    <tr>
+
+      <td><%= c.content %></td>
+
+    </tr>
+  <%end%>
+</table>
+<br><br>
 
 <%= link_to "Back to Index", posts_path %>
