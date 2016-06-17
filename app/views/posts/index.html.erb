@@ -8,6 +8,7 @@
   <tr>
   <br><br>
     <td>Topic</td>
+    <td>Category</td>
     <td>Post Time</td>
   </tr>
 
@@ -15,6 +16,7 @@
 
   <tr>
     <td><%= link_to post.title, post_path(post)%></td>
+    <td><%= post.category.try(:name)%></td>
     <td><%= post.created_at %></td>
 
     <td><%= link_to "Edit", edit_post_path(post), :class => "btn btn-primary"%></td>

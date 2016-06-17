@@ -15,3 +15,5 @@
   <%= f.label :content, "Content" %>
   <%= f.text_area :content %>
 </div>
+
+<%= f.collection_select(:category_id, Category.all, :id, :name) %>
